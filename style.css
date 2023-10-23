@@ -42,8 +42,8 @@ main {
         "footer rightbar";
     max-width: 1280px;
     width: 1280px;
-    mшт-width: 1280px;
-    
+    min-width: 1280px;
+    z-index:0;
 }
 
 .header {
@@ -227,6 +227,7 @@ main {
     display:flex;
     flex-direction: column;
     gap:22px;
+    
 }
 
 .contact-content{
@@ -277,7 +278,7 @@ main {
 }
 
 .rightbar-footer{
-    margin-top:155px;
+    margin-top:30px;
     margin-left:18px;
     display:flex;
     flex-direction: row;
@@ -293,3 +294,48 @@ main {
     height: 50px;
     fill:white;
 }
+
+.form-wrap{
+    display:flex;
+    justify-content: center;
+    gap:35px;
+    flex-direction: column;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    margin: 0 auto;
+    gap:10px;
+  }
+  
+  input, textarea {
+    padding: 5px;
+    margin-top: 5px;
+    border: 2px solid #FF9C01;
+    resize: none;
+    width:80%;
+    z-index:999;
+    font-size: 24px;
+    font-weight: 300;
+    background-color: unset;
+    color:white;
+  }
+   
+  button {
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: #FF9C01;
+    border: none;
+    color: black;
+    cursor: pointer;
+    width:83%;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .error{
+    border-color:red;
+  }
