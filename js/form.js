@@ -18,7 +18,7 @@ let feedback = {
 const feedbackKeys = Object.keys(feedback)
 for (const key of feedbackKeys){
  // console.log(key)
-  document.getElementById(key).value = JSON.parse(localStorage.feedback)[key]
+ // document.getElementById(key).value = JSON.parse(localStorage.feedback)[key]
 }
 
 
@@ -39,7 +39,7 @@ form.addEventListener("input", () => {
   localStorage.feedback = JSON.stringify(feedback);
 });
 
-document.getElementById('submitBtn').onclick = function() {
+form.addEventListener('submit', () => {
     event.preventDefault()
     console.log(feedback)
     let arrayBlankFileds=[];
@@ -65,4 +65,4 @@ document.getElementById('submitBtn').onclick = function() {
       document.cookie = 'NameSurname=Jahn'
       alert( strNameSurname + ", спасибо за обращение!");
     }
-}
+})
