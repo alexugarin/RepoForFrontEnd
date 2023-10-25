@@ -11,30 +11,33 @@ let feedback = {
     name:"",
     surname:"",
     email:"",
-    phone:"",
+    phoneNumber:"",
     message:""
 };
 
-document.getElementById('name').value = JSON.parse(localStorage.feedback)['name']
-document.getElementById('surname').value = JSON.parse(localStorage.feedback)['surname']
-document.getElementById('email').value = JSON.parse(localStorage.feedback)['email']
-document.getElementById('phoneNumber').value = JSON.parse(localStorage.feedback)['phoneNumber']
-document.getElementById('message').value = JSON.parse(localStorage.feedback)['message']
+const feedbackKeys = Object.keys(feedback)
+for (const key of feedbackKeys){
+ // console.log(key)
+  document.getElementById(key).value = JSON.parse(localStorage.feedback)[key]
+}
+
 
 let form = document.getElementById('feedbackForm')
 let validateBtn = document.getElementById('submitBtn')
 
 let requieredFields = form.querySelectorAll('.requiered')
 
-form.addEventListener('input', ()=>{
-    feedback['name']=document.getElementById('name').value
-    feedback['surname']=document.getElementById('surname').value
-    feedback['email']=document.getElementById('email').value;
-    (document.getElementById('phoneNumber').value==="+7(___)___-__-__")?feedback['phone']="":feedback['phone']=document.getElementById('phoneNumber').value
-    feedback['message']=document.getElementById('message').value
+form.addEventListener("input", () => {
+  feedback["name"] = document.getElementById("name").value;
+  feedback["surname"] = document.getElementById("surname").value;
+  feedback["email"] = document.getElementById("email").value;
+  document.getElementById("phoneNumber").value === "+7(___)___-__-__"
+    ? (feedback["phoneNumber"] = "")
+    : (feedback["phoneNumber"] = document.getElementById("phoneNumber").value);
+  feedback["message"] = document.getElementById("message").value;
 
-    localStorage.feedback = JSON.stringify(feedback);
-})
+  localStorage.feedback = JSON.stringify(feedback);
+});
 
 form.addEventListener('submit', () => {
     event.preventDefault()
@@ -44,17 +47,22 @@ form.addEventListener('submit', () => {
       if (!requieredFields[i].value) {
         requieredFields[i].classList.add("error");
         console.log("field is blank", requieredFields[i]);
-        arrayBlankFileds.push(requieredFields[i].value);
+        
+        arrayBlankFileds.push(requieredFields[i].getAttribute('placeholder'));
       }
       else{
         requieredFields[i].classList.remove("error");
       }
     }
-    if (arrayBlankFileds.length!=0){
-        let strBlankFileds=""
-        arrayBlankFileds.forEach(element => {
-            strBlankFileds=element+", "
-        });
-        alert("Поля "+strBlankFileds+" не заполнены")
+    if (arrayBlankFileds.length != 0) {
+      let strBlankFileds = "";
+      console.log(arrayBlankFileds);
+      strBlankFileds = arrayBlankFileds.join(", ");
+
+      alert("Поля " + strBlankFileds + " не заполнены");
+    } else {
+      let strNameSurname = requieredFields[0].value+' '+requieredFields[1].value
+      document.cookie = 'NameSurname=Jahn'
+      alert( strNameSurname + ", спасибо за обращение!");
     }
 })
