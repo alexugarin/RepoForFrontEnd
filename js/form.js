@@ -62,7 +62,7 @@ form.addEventListener('submit', () => {
       alert("Поля " + strBlankFileds + " не заполнены");
     } else {
       let strNameSurname = requieredFields[0].value+' '+requieredFields[1].value
-      document.cookie = 'NameSurname=Jahn'
+      document.cookie = 'NameSurname='+encodeURIComponent(strNameSurname)
       alert( strNameSurname + ", спасибо за обращение!");
     }
 })
