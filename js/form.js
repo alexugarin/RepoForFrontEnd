@@ -18,7 +18,7 @@ let feedback = {
 const feedbackKeys = Object.keys(feedback)
 for (const key of feedbackKeys){
  // console.log(key)
- // document.getElementById(key).value = JSON.parse(localStorage.feedback)[key]
+  document.getElementById(key).value = JSON.parse(localStorage.feedback)[key]
 }
 
 
