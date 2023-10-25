@@ -39,7 +39,7 @@ form.addEventListener("input", () => {
   localStorage.feedback = JSON.stringify(feedback);
 });
 
-form.addEventListener('submit', () => {
+document.getElementById('submitBtn').onclick = function() {
     event.preventDefault()
     console.log(feedback)
     let arrayBlankFileds=[];
@@ -65,4 +65,4 @@ form.addEventListener('submit', () => {
       document.cookie = 'NameSurname=Jahn'
       alert( strNameSurname + ", спасибо за обращение!");
     }
-})
+}
