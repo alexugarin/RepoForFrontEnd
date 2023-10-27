@@ -6,3 +6,6 @@ https://alexugarin.github.io/RepoForFrontEnd/palindrome.html
 
 # Task 5
 https://alexugarin.github.io/RepoForFrontEnd/calculatorTask5
+
+# Task 6
+https://alexugarin.github.io/RepoForFrontEnd
