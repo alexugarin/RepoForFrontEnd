@@ -9,3 +9,6 @@ https://alexugarin.github.io/RepoForFrontEnd/calculatorTask5
 
 # Task 6
 https://alexugarin.github.io/RepoForFrontEnd
+
+# Task7
+https://alexugarin.github.io/RepoForFrontEnd/task7
