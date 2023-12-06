@@ -1,0 +1,16 @@
+.dates{
+    display:flex;
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+.header{
+    max-width: 400px;
+}
+
+body{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+}
