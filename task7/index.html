@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Прогноз погоды</title>
+ 
+  <style>
+   article, aside, details, figcaption, figure, footer,header,
+   hgroup, menu, nav, section { display: block; }
+  </style>
+  
+  <link href="style.css" rel="stylesheet">
+ </head>
+ <body>
+    <div class="header">
+        <input id="cityInput" type="text" placeholder="Введите город">
+        <button id="forecastButton" onclick="">Поиск</button>
+        
+    </div>
+    <div class="dates">
+        <div class="time">
+            
+            <img src="defaultCloud.png" width="50px" height="50px" class="imgTime">
+            <div class="degrees"></div>
+            <div class="city"></div>
+            <div class="description">NotFound</div>
+            <div class="datetime"></div>
+        </div>
+        
+    </div>
+  
+ </body>
+ <script src="task7.js"></script>
+</html>
